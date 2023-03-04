@@ -1,0 +1,141 @@
+.container {
+    margin: 30px auto 0 auto;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.city-search {
+    text-align: left;
+    margin: 30px;
+    padding: 10px;
+}
+
+.search-button {
+    border-radius: 15px;
+    border: 0px;
+    padding: 5px;
+}
+
+#currentButton {
+    border: 0px;
+    border-radius: 15px;
+    position: relative;
+    bottom: 77px;
+    left: 350px;
+    padding: 5px;
+}
+
+.form-group {
+    border-radius: 10px;
+}
+
+.rounded {
+    padding: 5px;
+}
+
+.col-2-lg {
+    position: relative;
+}
+
+.row-lg {
+    padding: 20px;
+}
+
+#city-name {
+    padding-top: 90px;
+    padding-left: 80px;
+}
+
+.today {
+    font-size: 20px;
+    padding-top: 20px;
+    padding-left: 50px;
+}
+
+ul {
+    list-style: none;
+    padding: 80px;
+    line-height: 50px;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.days {
+    font-size: 30px;
+    margin: -50px;
+    line-height: 55px;
+}
+
+.temp {
+    font-size: 30px;
+    margin: -42px;
+}
+
+#unitTemp {
+    position: relative;
+    bottom: 150px;
+    right: 60px;
+}
+
+#tempGif {
+    position: relative;
+    bottom: 150px;
+    right: 50px;
+}
+
+#windGif {
+    position: relative;
+    bottom: 150px;
+    right: 90px;
+}
+
+#todaysDate {
+    position: relative;
+    font-size: 20px;
+    left: 90px;
+}
+
+.wind-now {
+    position: relative;
+    bottom: 150px;
+    right: 100px;
+}
+
+.selector {
+    text-align: right;
+    font-size: 30px;
+    position: relative;
+    left: 150px;
+    bottom: 30px;
+}
+
+.sunrise-sunset {
+    text-align: center;
+}
+
+.sunrise {
+    position: relative;
+    top: 60px;
+    right: 100px;
+    font-size: 30px;
+}
+
+.sunset {
+    position: relative;
+    bottom: 72px;
+    left: 100px;
+    font-size: 30px;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.pressure {
+    text-align: center;
+    font-size: 50px;
+    padding: 50px;
+}
