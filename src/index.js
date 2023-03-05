@@ -71,7 +71,7 @@ function showCity(position) {
 function currentLocation(location) {
   let lat = location.coords.latitude;
   let lon = location.coords.longitude;
-  let apiKey = "b95f179627c8dd37f41e1be6e3250e19";
+  let apiKey = "ed55b36e362d8733f7d859247cedeaf2";
   let urlCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(urlCurrent).then(forecast);
 }
