@@ -61,7 +61,12 @@ function forecast(response) {
   windNow.innerHTML = wind;
   let pressureNow = document.querySelector("#pressureCard");
   pressureNow.innerHTML = pressure;
-}
+  let iconChange = document.querySelector("#tempIcon");
+  iconChange.setAttribute(
+    "src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  )
+
+  }
 function showCity(position) {
   let key = "ed55b36e362d8733f7d859247cedeaf2";
   let searchCity = document.querySelector("#cityInput").value;
@@ -78,5 +83,6 @@ function currentLocation(location) {
 let currentButton = document.querySelector("#currentButton");
 currentButton.addEventListener("click", nav);
 function nav(curloc) {
+  curloc.preventDefault();
   navigator.geolocation.getCurrentPosition(currentLocation);
 }
