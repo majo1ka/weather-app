@@ -29,22 +29,29 @@ let citySearch = document.querySelector("#citySearchbar");
 citySearch.addEventListener("submit", showCity);
 //unit selector
 function celsiusSelect(event) {
-  event.preventDefault();
-  let celTemp = 9;
+   event.preventDefault();
+   celsiusS.classList.add("active")
+   fahrs.classList.remove("active");
   let tempCel = document.querySelector("#unitTemp");
-  tempCel.innerHTML = celTemp;
+  tempCel.innerHTML = Math.round(celsiusTemperature);
+
 }
 let cels = document.querySelector("#celsiusS");
 cels.addEventListener("click", celsiusSelect);
+let celsiusTemperature = null;
 
 function fahrenheitSelect(event) {
   event.preventDefault();
-  let fahrTemp = 48;
   let tempFahr = document.querySelector("#unitTemp");
-  tempFahr.innerHTML = fahrTemp;
+  celsiusS.classList.remove("active");
+  fahrs.classList.add("active");
+  let fahrTemp = (celsiusTemperature * 9) / 5 + 32;
+  tempFahr.innerHTML = Math.round(fahrTemp);
 }
 let fahrs = document.querySelector("#fahrS");
 fahrs.addEventListener("click", fahrenheitSelect);
+let celsiusS = document.querySelector("#celsiusS");
+celsiusS.addEventListener("click", celsiusSelect);
 //current position
 
 //show temp by city name
@@ -65,6 +72,7 @@ function forecast(response) {
   iconChange.setAttribute(
     "src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   )
+  celsiusTemperature = response.data.main.temp;
 
   }
 function showCity(position) {
