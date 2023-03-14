@@ -72,6 +72,8 @@ function forecast(response) {
   iconChange.setAttribute(
     "src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   )
+  let weatherDesc = document.querySelector("#desc")
+  weatherDesc.innerHTML = response.data.weather[0].description;
   celsiusTemperature = response.data.main.temp;
 
   }
