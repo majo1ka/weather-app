@@ -75,11 +75,13 @@ function forecast(response) {
   celsiusTemperature = response.data.main.temp;
 
   }
-function showCity(position) {
+function showCity(event) { {
+  event.preventDefault()
   let key = "ed55b36e362d8733f7d859247cedeaf2";
   let searchCity = document.querySelector("#cityInput").value;
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${key}&units=metric`;
   axios.get(url).then(forecast);
+}
 }
 function currentLocation(location) {
   let lat = location.coords.latitude;
