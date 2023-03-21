@@ -31,7 +31,7 @@
         </button>
       </div>
       <div class="row fs-1">
-        <div class="col-2-lg border rounded" style="height: 300px">
+        <div class="col-2-lg border rounded" style="height: 250px">
           <ul class="data">
             <li id="city-name"></li>
 
@@ -40,14 +40,14 @@
             <li id="desc"></li>
           </ul>
           <div style="float: right">
-            <span id="unitTemp"> 9 </span>
+            <span id="unitTemp"></span>
             <img
               id="tempIcon"
               src="http://openweathermap.org/img/wn/04n@2x.png"
             />
           </div>
           <div style="float: right">
-            <span class="wind-now" id="windShow"> 3</span>
+            <span class="wind-now" id="windShow"></span>
             <img id="windIcon" src="images/icons8-wind-50.png" />
           </div>
           <div class="selector" style="float: right">
@@ -60,52 +60,6 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-lg border rounded">
-          <ul class="days" style="float: left">
-            <li>Sun</li>
-            <li>Mon</li>
-            <li>Tue</li>
-            <li>Wed</li>
-            <li>Thur</li>
-          </ul>
-          <ul class="temp" style="float: right">
-            <li id="weatherforecast">
-              8°C
-              <img
-                src="http://openweathermap.org/img/wn/02d@2x.png"
-                width="70"
-              />
-            </li>
-            <li>
-              9°C
-              <img
-                src="http://openweathermap.org/img/wn/03d@2x.png"
-                width="70"
-              />
-            </li>
-            <li>
-              6°C
-              <img
-                src="http://openweathermap.org/img/wn/03d@2x.png"
-                width="70"
-              />
-            </li>
-            <li>
-              7°C
-              <img
-                src="http://openweathermap.org/img/wn/03d@2x.png"
-                width="70"
-              />
-            </li>
-            <li>
-              7°C
-              <img
-                src="http://openweathermap.org/img/wn/09d@2x.png"
-                width="70"
-              />
-            </li>
-          </ul>
-        </div>
         <div class="col-lg border">
           <div class="sunrise-sunset">
             <span class="sunrise"
@@ -120,10 +74,11 @@
         </div>
         <div class="col-lg border">
           <div class="card" style="width: 400px">
-            <div class="pressure" id="pressureCard">1025</div>
+            <div class="pressure" id="pressureCard"></div>
           </div>
         </div>
       </div>
+      <div class="weather-forecast" id="forecast"></div>
     </div>
     <footer>
       <a

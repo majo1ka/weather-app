@@ -83,7 +83,8 @@ function showCity(city) {
 }
 function handleSubmit(event) {
   event.preventDefault()
-let searchCity = document.querySelector("#cityInput").value;
+let searchCity = document.querySelector("#cityInput");
+showCity(searchCity.value);
 }
 function currentLocation(location) {
   let lat = location.coords.latitude;
@@ -100,7 +101,29 @@ function nav(curloc) {
 }
 //forecast function
 function showforecast() {
-  let forecast = document.querySelector("#weatherforecast");
-  forecast.innerHTML = "Forecast";
+  let forecast = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let forecastDays = ["Thu", "Fri", "Sat", "Sun"];
+  forecastDays.forEach(function(day) {
+
+  
+  forecastHTML = forecastHTML + `
+  
+  <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="http://openweathermap.org/img/wn/50d@2x.png"
+          alt=""
+          width="90"
+        />
+        <div class="weather-forecast-temperatures">
+          <span class="weather-forecast-temperature-max"> 18° </span>
+          <span class="weather-forecast-temperature-min"> 12° </span>
+        </div>
+        </div>`;
+        });
+      forecastHTML = forecastHTML + `</div>`;
+      forecast.innerHTML = forecastHTML;
  }
 showCity("Prague");
+showforecast();
