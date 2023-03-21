@@ -101,43 +101,13 @@ a {
     font-size: 30px;
     position: relative;
     left: 250px;
-    bottom: 50px;
+    bottom: 30px;
 }
 .selector .active {
     color: black;
     text-decoration: none;
 }
 
-.sunrise-sunset {
-    text-align: center;
-}
-
-.sunrise {
-    position: relative;
-    top: 60px;
-    right: 100px;
-    font-size: 30px;
-}
-
-.sunset {
-    position: relative;
-    bottom: 72px;
-    left: 100px;
-    font-size: 30px;
-}
-
-.card {
-    margin: 0 auto;
-    float: none;
-    margin-bottom: 10px;
-    margin-top: 40px;
-}
-
-.pressure {
-    text-align: center;
-    font-size: 50px;
-    padding: 50px;
-}
 #githublink {
     text-align: center;
     display: block;
@@ -156,4 +126,7 @@ a {
 .weather-forecast-temperature-min {
     color: rgb(165, 161, 161)
     
+}
+.weather-forecast {
+    margin: 40px;
 }
