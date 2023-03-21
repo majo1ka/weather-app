@@ -153,3 +153,7 @@ a {
     font-size: 30px;
     text-align: center;
 }
+.weather-forecast-temperature-min {
+    color: rgb(165, 161, 161)
+    
+}
