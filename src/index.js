@@ -26,7 +26,7 @@ let curDate = document.querySelector("#todaysDate");
 curDate.innerHTML = formatDate(now);
 //search bar
 let citySearch = document.querySelector("#citySearchbar");
-citySearch.addEventListener("submit", showCity);
+citySearch.addEventListener("submit", handleSubmit);
 //unit selector
 function celsiusSelect(event) {
    event.preventDefault();
@@ -52,10 +52,9 @@ let fahrs = document.querySelector("#fahrS");
 fahrs.addEventListener("click", fahrenheitSelect);
 let celsiusS = document.querySelector("#celsiusS");
 celsiusS.addEventListener("click", celsiusSelect);
-//current position
 
 //show temp by city name
-function forecast(response) {
+function showWeather(response) {
   let city = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let wind = Math.round(response.data.wind.speed);
@@ -77,20 +76,21 @@ function forecast(response) {
   celsiusTemperature = response.data.main.temp;
 
   }
-function showCity(event) { {
-  event.preventDefault()
+function showCity(city) {
   let key = "ed55b36e362d8733f7d859247cedeaf2";
-  let searchCity = document.querySelector("#cityInput").value;
-  let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&appid=${key}&units=metric`;
-  axios.get(url).then(forecast);
+  let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${key}&units=metric`;
+  axios.get(url).then(showWeather);
 }
+function handleSubmit(event) {
+  event.preventDefault()
+let searchCity = document.querySelector("#cityInput").value;
 }
 function currentLocation(location) {
   let lat = location.coords.latitude;
   let lon = location.coords.longitude;
   let apiKey = "ed55b36e362d8733f7d859247cedeaf2";
   let urlCurrent = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(urlCurrent).then(forecast);
+  axios.get(urlCurrent).then(showWeather);
 }
 let currentButton = document.querySelector("#currentButton");
 currentButton.addEventListener("click", nav);
@@ -98,3 +98,9 @@ function nav(curloc) {
   curloc.preventDefault();
   navigator.geolocation.getCurrentPosition(currentLocation);
 }
+//forecast function
+function showforecast() {
+  let forecast = document.querySelector("#weatherforecast");
+  forecast.innerHTML = "Forecast";
+ }
+showCity("Prague");
